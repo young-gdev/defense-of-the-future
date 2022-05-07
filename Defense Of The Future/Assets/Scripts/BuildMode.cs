@@ -7,21 +7,36 @@ using UnityEngine.UI;
 public class BuildMode : MonoBehaviour
 {
     public bool buildmode = false;
-    public string prefab = "none";
+    public string unit = "none";
     [SerializeField] GameObject mine;
+    public ParticleSystem spawnEffect;
+    public bool blockSpawn = false;
+    public ParticleSystem BlockedEffect;
 
 
     public void MineSpawn()
     {
         buildmode = true;
-        prefab = "mine";
+        unit = "mine";
     }
     
     public void SpawnAnyObject()
     {
-        if (prefab == "mine")
+        if (blockSpawn == false)
         {
-            Instantiate(mine);
+            if (unit == "mine")
+            {
+                Instantiate(mine);
+                spawnEffect.Play();
+                blockSpawn = true;
+            }
         }
+        else
+        {
+            BlockedEffect.Play();
+        }
+
+
+        
     }
 }
