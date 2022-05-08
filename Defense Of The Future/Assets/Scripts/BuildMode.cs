@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +11,7 @@ public class BuildMode : MonoBehaviour
     public ParticleSystem spawnEffect;
     public bool blockSpawn = false;
     public ParticleSystem BlockedEffect;
+    
 
 
     public void MineSpawn()
@@ -22,21 +22,25 @@ public class BuildMode : MonoBehaviour
     
     public void SpawnAnyObject()
     {
-        if (blockSpawn == false)
+        if (buildmode == true)
         {
-            if (unit == "mine")
+            if (blockSpawn == false)
             {
-                Instantiate(mine);
-                spawnEffect.Play();
-                blockSpawn = true;
+                if (unit == "mine")
+                {
+                    Instantiate(mine);
+                    spawnEffect.Play();
+                    blockSpawn = true;
+                    buildmode = false;
+                }
+            }
+            else
+            {
+                BlockedEffect.Play();
             }
         }
         else
         {
-            BlockedEffect.Play();
         }
-
-
-        
     }
 }
