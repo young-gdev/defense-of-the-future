@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8876894648705449519}
   - component: {fileID: 4005923297693390227}
   - component: {fileID: -5535777733857931602}
-  - component: {fileID: 2218701165857516134}
   - component: {fileID: -881324925593184182}
   m_Layer: 0
   m_Name: minePrefab(5;2)
@@ -236,22 +235,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &2218701165857516134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7922020388699672057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c172a2442895429819162b7a15a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  timeToUp: 3
-  timeToExplosion: 1
-  up: 0
 --- !u!61 &-881324925593184182
 BoxCollider2D:
   m_ObjectHideFlags: 0
